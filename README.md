@@ -1,12 +1,12 @@
 # YWVideoPlayer
 > 基于ijkPlayer的播放器，支持网络视频、RTMP直播、视频转播等
 
-![](http://upload-images.jianshu.io/upload_images/2822163-8678f5b11497fde1.png)
+![](./效果图.png)
 
 ### 3分钟快速集成播放器，支持小屏、全屏模式
 
 #### 一、使用 `Pod` 导入方式
-**1、在podfile文件中添加，然后执行 `pod install`操作，由于 `IJKMediaFramework` 较大，请耐心等待**
+**1、在podfile文件中添加，然后执行 `pod install`操作，文件较大，请耐心等待**
 
 ```
 pod 'YWVideoPlayer', '~> 1.0.0'
