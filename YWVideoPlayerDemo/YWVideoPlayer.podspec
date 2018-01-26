@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
 		    基于ijkplayer的播放器,可播RMTP、网络视频、本地视频等等"
                   DESC
   s.homepage      = "https://github.com/90candy/YWVideoPlayer"
-  s.license       = { :type => "Apache-2.0”, :file => "LICENSE" }
+  s.license       = { :type => "Apache-2.0", :file => "LICENSE" }
   s.author        = { "阿唯不知道" => "920093012@qq.com" }
-  s.platform      = :ios, "9.0"
+  s.platform      = :ios, "8.0"
   s.source        = { :git => "https://github.com/90candy/YWVideoPlayer.git", :tag => s.version }
   s.source_files  = "YWVideoPlayerDemo/YWVideoPlayer/*.{h,m}"
   s.resources     = "YWVideoPlayerDemo/YWVideoPlayer/Resources/*.png"
