@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.author        = { "阿唯不知道" => "920093012@qq.com" }
   s.platform      = :ios, "9.0"
   s.source        = { :git => "https://github.com/90candy/YWVideoPlayer.git", :tag => s.version }
-  s.source_files  = "YWVideoPlayerDemo/YWMadiaPlayer/*.{h,m}"
-  s.resources     = "YWVideoPlayerDemo/YWMadiaPlayer/Resources/*.png"
+  s.source_files  = "YWVideoPlayerDemo/YWVideoPlayer/*.{h,m}"
+  s.resources     = "YWVideoPlayerDemo/YWVideoPlayer/Resources/*.png"
   s.requires_arc  = true
   s.dependency      "SDWebImage", ">=4.0.0"
   s.social_media_url = "https://www.jianshu.com/u/0f7d26d766f4"

@@ -113,7 +113,7 @@
 		36D34295201B34AE00A1F3D8 = {
 			isa = PBXGroup;
 			children = (
-				36D342B7201B378D00A1F3D8 /* YWMadiaPlayer */,
+				36D342B7201B378D00A1F3D8 /* YWVideoPlayer */,
 				36D342A0201B34AE00A1F3D8 /* YWVideoPlayerDemo */,
 				36D3429F201B34AE00A1F3D8 /* Products */,
 				1F8FBE46F9F5D38630AA605D /* Pods */,
@@ -149,7 +149,7 @@
 			path = YWVideoPlayerDemo;
 			sourceTree = "<group>";
 		};
-		36D342B7201B378D00A1F3D8 /* YWMadiaPlayer */ = {
+		36D342B7201B378D00A1F3D8 /* YWVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				36D342B8201B378D00A1F3D8 /* Resources */,
@@ -164,7 +164,7 @@
 				36D342CD201B378D00A1F3D8 /* YWReachability.h */,
 				36D342CE201B378D00A1F3D8 /* YWReachability.m */,
 			);
-			path = YWMadiaPlayer;
+			path = YWVideoPlayer;
 			sourceTree = "<group>";
 		};
 		36D342B8201B378D00A1F3D8 /* Resources */ = {
