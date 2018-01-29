@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
+#import "UIView+YWExtend.h"
 
 #import "YWMediaControl.h"
 

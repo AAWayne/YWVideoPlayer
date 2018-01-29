@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+YWExtend.h"
+
 #import "YWMediaPlayerView.h"
 
 @interface BasePlayerViewController : UIViewController <YWMediaPlayerViewDelegate>

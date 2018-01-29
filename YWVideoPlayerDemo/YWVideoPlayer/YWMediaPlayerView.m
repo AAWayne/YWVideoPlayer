@@ -7,7 +7,6 @@
 //
 
 #import "YWMediaPlayerView.h"
-#import "UIView+YWExtend.h"
 #import "UIImageView+WebCache.h"
 #import "YWReachability.h"
 #import <AVFoundation/AVFoundation.h>

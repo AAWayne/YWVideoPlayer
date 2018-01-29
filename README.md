@@ -1,11 +1,12 @@
-# YWVideoPlayer
-> 基于ijkPlayer的播放器，支持网络视频、RTMP直播、视频转播等
+## YWVideoPlayer
 
 ![](./效果图.png)
 
-### 3分钟快速集成播放器，支持小屏、全屏模式
+> 基于ijkPlayer的播放器，支持网络视频、RTMP直播、视频转播等
+> 
+> 3分钟快速集成播放器，支持小屏、全屏模式
 
-#### 一、使用 `Pod` 导入方式
+#### 一、推荐使用`CocoaPods`方式集成
 **1、在podfile文件中添加，然后执行 `pod install`操作，文件较大，请耐心等待**
 
 ```
@@ -13,7 +14,7 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 ```
 
 **2、`AppDelegate.h` 文件中加入 `fullScreen ` 属性，如下**
- 
+
 ```
 #import <UIKit/UIKit.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -34,7 +35,15 @@ pod 'YWVideoPlayer', '~> 1.0.0'
     return UIInterfaceOrientationMaskPortrait;
 }
 ```
-**4、照着`BasePlayerViewController`文件中的方式去使用即可**
+
+**4、在播放器控制器界面导入头文件**
+*Demo 里面是在`BasePlayerViewController`中引入相关头文件*
+
+```
+#import "YWMediaPlayerView.h"
+```
+
+**5、照着`BasePlayerViewController`文件中的方式去使用即可**
 
 ```
 // 这里的SecondViewController是继承了BasePlayerViewController
@@ -58,8 +67,9 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 @end
 ```
 
- 
 
 #### 二、手动拖拽到项目方式
 **完善中**
+
+**简书地址：https://www.jianshu.com/p/546df1c8a3fc**
 
