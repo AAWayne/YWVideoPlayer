@@ -71,5 +71,6 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 #### 二、手动拖拽到项目方式
 **完善中**
 
+--
 **简书地址：https://www.jianshu.com/p/546df1c8a3fc**
 
