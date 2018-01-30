@@ -17,7 +17,8 @@
 @implementation AppDelegate
 
 
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
     if (self.fullScreen == YES) {
         return UIInterfaceOrientationMaskAll;
     }

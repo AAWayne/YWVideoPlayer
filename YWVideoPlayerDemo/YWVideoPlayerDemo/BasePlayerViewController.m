@@ -67,7 +67,7 @@
     if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft ||
         [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
         self.mediaPlayerView.frame = CGRectMake(0, 0, kDWidth, kDHeight);
-        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, kDHeight, kDWidth);
+        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, kDWidth, kDHeight);
         self.mediaPlayerView.mediaControl.fullScreenBtn.selected = YES;
         self.mediaPlayerView.isFullScreen = YES;
         [kDWindow addSubview:self.mediaPlayerView];
