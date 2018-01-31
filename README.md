@@ -54,12 +54,17 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.isLiveVideo = YES; // 设置为直播
+    
+    self.isLiveVideo = YES;
     [self.view addSubview:self.playerView];
-    NSString *mvUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
-    [self showPlayerViewWithUrl:mvUrl Title:@"三国"];
+   
+    // 测试链接 mp4、rtmp、m3u8
+	// NSString *testUrl = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
+	// NSString *testUrl = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
+    NSString *testUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
+    [self showPlayerViewWithUrl:testUrl Title:@"视频的标题"];
     // 自动播放
     [self autoPlay];
 }
