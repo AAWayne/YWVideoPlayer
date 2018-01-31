@@ -66,11 +66,11 @@
     
     if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft ||
         [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
-        self.mediaPlayerView.frame = CGRectMake(0, 0, kDWidth, kDHeight);
-        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, kDWidth, kDHeight);
+        self.mediaPlayerView.frame = CGRectMake(0, 0, DEVICE_HEIGHT, DEVICE_WIDTH);
+        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, DEVICE_HEIGHT, DEVICE_WIDTH);
         self.mediaPlayerView.mediaControl.fullScreenBtn.selected = YES;
         self.mediaPlayerView.isFullScreen = YES;
-        [kDWindow addSubview:self.mediaPlayerView];
+        [YWWindow addSubview:self.mediaPlayerView];
     } else {
         self.mediaPlayerView.frame = CGRectMake(0, 0, size.width, size.width/16*9);
         self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, size.width, size.width/16*9);
@@ -116,9 +116,8 @@
 #pragma mark -- getter
 - (UIView *)playerView {
     if (!_playerView) {
-        _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDWidth, kDWidth/16*9)];
+        _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/16*9)];
         _playerView.backgroundColor = [UIColor lightGrayColor];
-
     }
     return _playerView;
 }
