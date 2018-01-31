@@ -17,7 +17,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    // 确保在该控制器即将消失的时候让屏幕处于非全屏状态
+    // 确保在该控制器即将消失的时候关闭全屏模式
     ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = NO;
 }
 
@@ -32,20 +32,21 @@
 /// 点击关闭按钮
 - (void)playerViewClosed:(YWMediaPlayerView *)player {
     
-    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInt:UIInterfaceOrientationPortrait]
+                                forKey:@"orientation"];
 }
 
 /// 全屏/非全屏切换
 - (void)playerView:(YWMediaPlayerView *)player fullscreen:(BOOL)fullscreen {
     
     if (fullscreen == YES) {
-        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
-        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+        
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight]
+                                    forKey:@"orientation"];
     } else {
-        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+        
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInt:UIInterfaceOrientationPortrait]
+                                    forKey:@"orientation"];
     }
 }
 
@@ -66,8 +67,8 @@
     
     if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft ||
         [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
-        self.mediaPlayerView.frame = CGRectMake(0, 0, DEVICE_HEIGHT, DEVICE_WIDTH);
-        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, DEVICE_HEIGHT, DEVICE_WIDTH);
+        self.mediaPlayerView.frame = CGRectMake(0, 0, YWSCREEN_WIDTH, YWSCREEN_HEIGHT);
+        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, YWSCREEN_WIDTH, YWSCREEN_HEIGHT);
         self.mediaPlayerView.mediaControl.fullScreenBtn.selected = YES;
         self.mediaPlayerView.isFullScreen = YES;
         [YWWindow addSubview:self.mediaPlayerView];
@@ -83,20 +84,20 @@
 #pragma mark -- 加载 & 移除
 - (void)showPlayerViewWithUrl:(NSString *)urlString Title:(NSString *)title {
     [self removePlayViewSubViews];
-    // 开启支持全屏模式
+    // 开启全屏模式
     ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = YES;
     [self.mediaPlayerView playerViewWithUrl:urlString WithTitle:title WithView:self.playerView WithDelegate:self];
 }
 
 - (void)removePlayerView {
     [self removePlayViewSubViews];
-    // 关闭支持全屏模式 - 这里之所以关闭时因为有的应用其他界面只有一个方向
+    // 关闭全屏模式
     ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = NO;
 }
 
 - (void)autoPlay {
     __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 自动播放
         [weakSelf.mediaPlayerView.mediaControl playControl];
     });
@@ -116,8 +117,9 @@
 #pragma mark -- getter
 - (UIView *)playerView {
     if (!_playerView) {
-        _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/16*9)];
+        _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, YWSCREEN_WIDTH, YWMinPlayerHeight)];
         _playerView.backgroundColor = [UIColor lightGrayColor];
+
     }
     return _playerView;
 }

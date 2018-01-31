@@ -176,7 +176,6 @@ typedef void(^Handler)(UIAlertAction *handler);
         self.player=nil;
     }
     
-//    self.pushPlayerPause=NO;
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];
     self.player.view.frame = self.view.bounds;
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
@@ -249,7 +248,7 @@ typedef void(^Handler)(UIAlertAction *handler);
     if ([self.player isPlaying]) {
         [self.player pause];
         [self.mediaControl refreshMediaControl];
-    }else{
+    } else {
 
         [self.player play];
         [self.mediaControl refreshMediaControl];
@@ -281,11 +280,11 @@ typedef void(^Handler)(UIAlertAction *handler);
 
 - (void)loadStateDidChange:(NSNotification*)notification
 {
-    //    MPMovieLoadStateUnknown        = 0,
-    //    MPMovieLoadStatePlayable       = 1 << 0,
-    //    MPMovieLoadStatePlaythroughOK  = 1 << 1, // Playback will be automatically started in this state when shouldAutoplay is YES
-    //    MPMovieLoadStateStalled        = 1 << 2, // Playback will be automatically paused in this state, if started
-    
+//    MPMovieLoadStateUnknown        = 0,
+//    MPMovieLoadStatePlayable       = 1 << 0,
+//    MPMovieLoadStatePlaythroughOK  = 1 << 1, // Playback will be automatically started in this state when shouldAutoplay is YES
+//    MPMovieLoadStateStalled        = 1 << 2, // Playback will be automatically paused in this state, if started
+
     IJKMPMovieLoadState loadState = _player.loadState;
     
     if ((loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
@@ -337,12 +336,6 @@ typedef void(^Handler)(UIAlertAction *handler);
 
 - (void)moviePlayBackStateDidChange:(NSNotification*)notification
 {
-    //    MPMoviePlaybackStateStopped,
-    //    MPMoviePlaybackStatePlaying,
-    //    MPMoviePlaybackStatePaused,
-    //    MPMoviePlaybackStateInterrupted,
-    //    MPMoviePlaybackStateSeekingForward,
-    //    MPMoviePlaybackStateSeekingBackward
     
     switch (_player.playbackState)
     {
@@ -454,16 +447,16 @@ typedef void(^Handler)(UIAlertAction *handler);
     
     // 3.判断网络状态
     if ([wifi currentYWReachabilityStatus] != NotReachable) {
-        NSLog(@"有wifi");
+        NSLog(@"正在使用WIFI播放");
     }
     else if ([connect currentYWReachabilityStatus] != NotReachable) {
-        NSLog(@"使用手机自带网络进行上网");
+        NSLog(@"正在使用手机自带网络播放");
         [self alertWithTitle:@"提示" message:@"当前使用移动网络是否继续播放" okTitle:@"继续播放" cancelTitle:@"关闭" okHandler:nil cancelHandler:^(UIAlertAction *handler) {
             [weakSelf playerWillHide];
         }];
     }
     else {
-        NSLog(@"没有网络");
+        NSLog(@"暂无可用网络");
         [self alertWithTitle:@"提示" message:@"似乎已经断开网络连接" okTitle:@"检查网络" cancelTitle:@"关闭" okHandler:^(UIAlertAction *handler) {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
             
@@ -477,7 +470,6 @@ typedef void(^Handler)(UIAlertAction *handler);
 #endif
         } cancelHandler:^(UIAlertAction *handler) {
             [weakSelf playerWillHide];
-            
         }];
     }
 }
@@ -508,11 +500,6 @@ typedef void(^Handler)(UIAlertAction *handler);
 - (UIImageView *)previewImage {
     if (!_previewImage) {
         _previewImage = [[UIImageView alloc] init];
-//        if (_previewImageName) {
-//            _previewImage.image = [UIImage imageNamed:_previewImageName];
-//        } else if (_previewImagePath) {
-//            [self.previewImage sd_setImageWithURL:[NSURL URLWithString:_previewImagePath] placeholderImage:PLACEHOlDER_IMAGE];
-//        }
         [self.view insertSubview:_previewImage belowSubview:self.mediaControl];
     }
     

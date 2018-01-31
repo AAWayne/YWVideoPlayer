@@ -34,10 +34,10 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     // 第一种实现方式 - 单独的界面使用
-    _window.rootViewController = [FirstViewController new];
+//    _window.rootViewController = [FirstViewController new];
     
     // 第二种实现方式 - 以基类的方式使用
-    //    _window.rootViewController = [SecondViewController new];
+    _window.rootViewController = [SecondViewController new];
     
     [_window makeKeyAndVisible];
     

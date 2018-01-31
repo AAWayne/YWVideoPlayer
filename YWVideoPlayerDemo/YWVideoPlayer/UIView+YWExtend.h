@@ -15,17 +15,20 @@
 #define IS_DEVICE_LANDSCAPE UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])
 
 // 屏幕宽度，会根据横竖屏的变化而变化
-#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define YWSCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 // 屏幕高度，会根据横竖屏的变化而变化
-#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define YWSCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
 // 屏幕宽度，跟横竖屏无关
-#define DEVICE_WIDTH (IS_LANDSCAPE ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
+#define YWDEVICE_WIDTH (IS_LANDSCAPE ? YWSCREEN_HEIGHT : YWSCREEN_WIDTH)
 // 屏幕高度，跟横竖屏无关
-#define DEVICE_HEIGHT (IS_LANDSCAPE ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
+#define YWDEVICE_HEIGHT (IS_LANDSCAPE ? YWSCREEN_WIDTH : YWSCREEN_HEIGHT)
 
 // 当前窗口
 #define YWWindow [[UIApplication sharedApplication].delegate window]
+
+// 小屏模式高度
+#define YWMinPlayerHeight (YWSCREEN_WIDTH / 16 * 9)
 
 @interface UIView (YWExtend)
 

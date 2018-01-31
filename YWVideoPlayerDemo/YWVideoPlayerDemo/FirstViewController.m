@@ -10,9 +10,6 @@
 #import "YWMediaPlayerView.h"
 #import "AppDelegate.h"
 
-#define kDWidth [UIScreen mainScreen].bounds.size.width
-#define MinPlayerHeight (kDWidth / 16 * 9)
-
 @interface FirstViewController () <YWMediaPlayerViewDelegate>
 
 @property (nonatomic, strong)YWMediaPlayerView  *mediaPlayerView;
@@ -24,29 +21,31 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    // 确保在该控制器即将消失的时候开启全屏模式
     ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    // 确保在该控制器即将消失的时候关闭全屏模式
     ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = NO;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDWidth, MinPlayerHeight)];
+    _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, YWSCREEN_WIDTH, YWMinPlayerHeight)];
     _playerView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:_playerView];
     _mediaPlayerView = [[YWMediaPlayerView alloc]init];
     
-    // 测试链接
-    // NSString *mvUrl = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
-    // NSString *mvUrl = @"http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8";
-    NSString *mvUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
-
-    [_mediaPlayerView playerViewWithUrl:mvUrl WithTitle:@"三国演义" WithView:_playerView  WithDelegate:self];
+    // 测试链接 mp4、rtmp、m3u8
+    // NSString *testUrl = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
+    // NSString *testUrl = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
+    NSString *testUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
+    [_mediaPlayerView playerViewWithUrl:testUrl WithTitle:@"视频的标题" WithView:_playerView  WithDelegate:self];
     
     // 这里如果是直播，则隐藏进度条以及时间等控件
     _mediaPlayerView.mediaControl.totalDurationLabel.hidden = YES;
