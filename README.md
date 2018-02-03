@@ -82,7 +82,7 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 **简书地址：https://www.jianshu.com/p/546df1c8a3fc**
 
 <div align="center">    
-	<img src = "https://upload-images.jianshu.io/upload_images/2822163-a12b27b5c156bf81.png" width = "300" height = "100" alt="图片名称" align = center />
+	<img src = "http://upload-images.jianshu.io/upload_images/2822163-23eb59c7072548bb.png" width = "300" height = "100" alt="图片名称" align = center />
 </div>
 
 
