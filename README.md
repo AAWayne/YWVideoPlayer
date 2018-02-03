@@ -1,5 +1,6 @@
 ## YWVideoPlayer
 
+### 全屏模式 - 效果图
 ![](./效果图.png)
 
 > 基于ijkPlayer的网络播放器，支持MP4、RTMP、HLS(m3u8)等格式
@@ -79,4 +80,9 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 -----------------------------------
 
 **简书地址：https://www.jianshu.com/p/546df1c8a3fc**
+
+<div align="center">    
+	<img src = "https://upload-images.jianshu.io/upload_images/2822163-a12b27b5c156bf81.png" width = "300" height = "100" alt="图片名称" align = center />
+</div>
+
 
