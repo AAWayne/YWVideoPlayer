@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name          = "YWVideoPlayer"
-  s.version       = “1.0.1"
-  s.summary       = "基于ijkplayer的播放器,支持RMTP、网络视频、本地视频等等"
+  s.version       = "1.0.2"
+  s.summary       = "基于ijkplayer的播放器,支持RMTP、HLS(m3u8)、网络视频、本地视频等等"
   s.description   = <<-DESC                 
 		    基于ijkplayer的播放器,可播RMTP、网络视频、本地视频等等"
                   DESC

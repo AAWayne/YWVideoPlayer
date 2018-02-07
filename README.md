@@ -3,7 +3,7 @@
 ### 全屏模式 - 效果图
 ![](./效果图.png)
 
-> 基于ijkPlayer的网络播放器，支持网络视频、RTMP、HLS(m3u8)等多种格式
+> 基于ijkPlayer的网络播放器，支持HTTP、RTMP、HLS(m3u8)、本地视频等多种格式
 > 
 > 3分钟快速集成播放器，支持小屏、全屏模式，无需手动添加任何依赖库
 
@@ -61,7 +61,7 @@ pod 'YWVideoPlayer', '~> 1.0.0'
     self.isLiveVideo = YES;
     [self.view addSubview:self.playerView];
    
-    // 测试链接 mp4、rtmp、m3u8
+    // 测试链接 http、rtmp、m3u8
     // NSString *testUrl = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
     // NSString *testUrl = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
     NSString *testUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
