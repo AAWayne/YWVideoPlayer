@@ -1,4 +1,7 @@
-## YWVideoPlayer
+![Pod](https://img.shields.io/badge/Pod-1.0.2-orange.svg)
+![Platform](https://img.shields.io/badge/Platform-iOS-ff69b4.svg)
+ ![License](https://img.shields.io/github/license/alibaba/dubbo.svg)
+[![Aboutme](https://img.shields.io/badge/About%20Me-阿唯不知道-blue.svg)](https://www.jianshu.com/u/0f7d26d766f4)
 
 ### 全屏模式 - 效果图
 ![](./效果图.png)
