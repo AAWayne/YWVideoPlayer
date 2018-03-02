@@ -14,7 +14,8 @@
 /**
  *  自动从xib创建视图
  */
-+(instancetype)viewFromXIB{
++(instancetype)viewFromXIB
+{
     
     NSString *name=NSStringFromClass(self);
     
@@ -248,7 +249,8 @@
 
 
 #pragma mark  圆角处理
--(void)setRadius:(CGFloat)r{
+-(void)setRadius:(CGFloat)r
+{
     
     if(r<=0) r=self.frame.size.width * .5f;
     
@@ -265,7 +267,8 @@
 
 
 #pragma mark  添加一组子view：
--(void)addSubviewsWithArray:(NSArray *)subViews{
+-(void)addSubviewsWithArray:(NSArray *)subViews
+{
     
     for (UIView *view in subViews) {
         
@@ -309,7 +312,8 @@
 /**
  *  查找NVG 的分割线 ---- navigationBar
  */
-+ (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
++ (UIImageView*)findHairlineImageViewUnder:(UIView*)view
+{
     
     if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0)
     {
@@ -329,17 +333,16 @@
 /**
  *  查找指定类型的subView 每个族列只有一次有效
  */
-- (void)fintSubView:(Class)class action:(void(^)(NSArray *subViews))actionBlock
+- (void)findSubView:(Class)subView action:(void(^)(NSArray *subViews))actionBlock
 {
     
     __block NSMutableArray  *views = [[NSMutableArray alloc] init];
     
-    
     for (UIView *view in self.subviews) {
-        if ([view isKindOfClass:class]) {
+        if ([view isKindOfClass:subView]) {
             [views addObject:view];
         }else{
-            [view fintSubView:class action:^(NSArray *subViews) {
+            [view findSubView:subView action:^(NSArray *subViews) {
                 [views addObjectsFromArray:subViews];
             }];
         }

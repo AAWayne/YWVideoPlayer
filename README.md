@@ -1,4 +1,4 @@
-[![Pod](https://img.shields.io/badge/Pod-1.0.2-orange.svg)](https://github.com/90candy)
+[![Pod](https://img.shields.io/badge/Pod-1.0.3-orange.svg)](https://github.com/90candy)
 [![Platform](https://img.shields.io/badge/Platform-iOS-ff69b4.svg)](https://github.com/90candy)
  [![License](https://img.shields.io/github/license/alibaba/dubbo.svg)](https://github.com/90candy)
 [![Author](https://img.shields.io/badge/Author-阿唯不知道-blue.svg)](https://www.jianshu.com/u/0f7d26d766f4)
@@ -14,7 +14,7 @@
 **1、在podfile文件中添加，然后执行 `pod install`操作，文件较大，请耐心等待**
 
 ```
-pod 'YWVideoPlayer', '~> 1.0.0'
+pod 'YWVideoPlayer', '~> 1.0.3'
 ```
 
 **2、`AppDelegate.h` 文件中加入 `fullScreen ` 属性，如下**

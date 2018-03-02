@@ -111,7 +111,7 @@
 /**
  *  查找指定类型的subView 每个族列只有一次有效
  */
-- (void)fintSubView:(Class)subView action:(void(^)(NSArray *subViews))actionBlock;
+- (void)findSubView:(Class)subView action:(void(^)(NSArray *subViews))actionBlock;
 
 
 
