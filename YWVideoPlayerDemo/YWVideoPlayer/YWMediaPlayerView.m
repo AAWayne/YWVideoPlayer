@@ -70,7 +70,7 @@ typedef void(^Handler)(UIAlertAction *handler);
 - (UIView*)view {
     if (!_view) {
         _view = [[UIView alloc] initWithFrame:self.bounds];
-        _view.backgroundColor = [UIColor darkGrayColor];
+        _view.backgroundColor = [UIColor blackColor];
     }
     
     return _view;
@@ -89,15 +89,19 @@ typedef void(^Handler)(UIAlertAction *handler);
     [super layoutSubviews];
     self.view.frame = self.bounds;
     self.mediaControl.frame = self.view.bounds;
-    
     CGFloat autoPlayer_H = (self.view.width / 16 * 9);
     CGFloat top = (self.view.height - autoPlayer_H)/2;
     CGRect playFrame = CGRectMake(0, top, self.view.width, autoPlayer_H);
-    
+    playFrame = CGRectMake(0, 0, [UIApplication sharedApplication].keyWindow.width, [UIApplication sharedApplication].keyWindow.height);
+    if (CGRectGetWidth(self.playerFrame) != 0) {
+        playFrame = self.playerFrame;
+    }
     [self.player view].frame = playFrame;
+//    [self.player view].frame = CGRectMake(0, 0, [UIApplication sharedApplication].keyWindow.width, [UIApplication sharedApplication].keyWindow.height);
     
     if (_previewImage) {
         _previewImage.frame = playFrame;
+//        _previewImage.frame = CGRectMake(0, 0, [UIApplication sharedApplication].keyWindow.width, [UIApplication sharedApplication].keyWindow.height);
     }
     
 }
@@ -178,6 +182,8 @@ typedef void(^Handler)(UIAlertAction *handler);
     
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];
     self.player.view.frame = self.view.bounds;
+    
+//    self.player.view.frame = CGRectMake(0, 0, [UIApplication sharedApplication].keyWindow.width, [UIApplication sharedApplication].keyWindow.height);
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.shouldAutoplay = YES;
     
@@ -187,6 +193,10 @@ typedef void(^Handler)(UIAlertAction *handler);
   
 }
 
+- (void)setPlayerFrame:(CGRect)playerFrame {
+    _playerFrame = playerFrame;
+    [self.player view].frame = playerFrame;
+}
 
 - (void)setIsFullScreen:(BOOL)isFullScreen
 {

@@ -53,7 +53,7 @@
 @property (nonatomic, strong) UIImageView                 * previewImage;       // 预览图
 @property (nonatomic, strong) NSString                    * previewImageName;   // 预览图名字
 @property (nonatomic, strong) NSString                    * previewImagePath;   // 预览图路径
-
+@property (nonatomic, assign) CGRect                          playerFrame;      // 重置frame
 
 - (instancetype)initWithFrame:(CGRect)frame uRL:(NSURL *)url title:(NSString *)title;
 -(void)playerViewWithUrl:(NSString*)urlString WithTitle:(NSString*)title WithView:(UIView*)view WithDelegate:(UIViewController*)viewController;
